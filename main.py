@@ -6,13 +6,11 @@ import webbrowser
 from colorama import init, Fore, Style
 import time
 
-# Initialisation de colorama
 init(autoreset=True)
 
-# Informations sur le dépôt GitHub
 GITHUB_REPO = "https://api.github.com/repos/HamzaGSopp/AnGel"
 GITHUB_URL = "https://github.com/HamzaGSopp/AnGel"
-CURRENT_VERSION = "1.0.0"  # Version actuelle de votre outil
+CURRENT_VERSION = "1.0.0"  
 
 DEPENDENCIES = ["colorama", "requests"]
 
@@ -49,9 +47,9 @@ def check_for_update():
         print(f"{Fore.RED}[ ! ] Failed to check for updates: {e}")
 
 def display_menu():
-    ascii_art = """
+    ascii_art = r"""
       ______              ______             __ 
-     /      \            /      \           |  \\
+     /      \            /      \           |  \
     |  $$$$$$\ _______  |  $$$$$$\  ______  | $$
     | $$__| $$|       \ | $$ __\$$ /      \ | $$
     | $$    $$| $$$$$$$\| $$|    \|  $$$$$$\| $$
@@ -71,7 +69,7 @@ def main():
     install_dependencies()
     clear_console()
     check_for_update()
-    time.sleep(2)  # Pause pour que l'utilisateur puisse voir le message
+    time.sleep(2)  
     clear_console()
     display_menu()
 
