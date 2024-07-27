@@ -151,6 +151,12 @@ def set_title(title):
     else:
         sys.stdout.write(f"\x1b]2;{title}\x07")
 
+def execute_option_1():
+    clear_console()
+    subprocess.call([sys.executable, "op/1.py"])
+    clear_console()
+    display_menu()
+
 def main():
     set_title("AnGel | by HamzaGSopp")
     install_dependencies()
@@ -167,11 +173,19 @@ def main():
         try:
             gradient_text = apply_gradient("Enter a number: ", gradient_input)
             choice = input(gradient_text)
-            if choice.isdigit() and 1 <= int(choice) <= 9:
-                print(f"You selected option {choice}.")
-                break
+            if choice.isdigit():
+                if int(choice) == 9:
+                    print("Exiting the program...")
+                    sys.exit()
+                elif int(choice) == 1:
+                    execute_option_1()
+                elif 1 <= int(choice) <= 8:
+                    print(f"You selected option {choice}.")
+                    # Ajoutez le code pour chaque option ici
+                else:
+                    print("Invalid choice. Please enter a number between 1 and 9.")
             else:
-                print("Invalid choice. Please enter a number between 1 and 9.")
+                print("Invalid input. Please enter a valid number.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
