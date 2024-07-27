@@ -181,7 +181,6 @@ def main():
                     execute_option_1()
                 elif 1 <= int(choice) <= 8:
                     print(f"You selected option {choice}.")
-                    # Ajoutez le code pour chaque option ici
                 else:
                     print("Invalid choice. Please enter a number between 1 and 9.")
             else:
