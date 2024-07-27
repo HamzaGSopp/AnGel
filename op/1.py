@@ -27,11 +27,9 @@ def apply_gradient(text, gradient):
         colored_text.append(gradient[i % gradient_length] + char)
     return ''.join(colored_text) + Fore.RESET
 
-def colorize_title(title):
-    return Fore.YELLOW + f"[{title}]:" + Fore.RESET
-
-def colorize_value(value):
-    return Fore.WHITE + value + Fore.RESET
+def format_info(title, value, gradient):
+    gradient_title = apply_gradient(title, gradient)
+    return f"{gradient_title} {Fore.WHITE}{value}"
 
 def display_discord_info(token_discord):
     try:
@@ -40,7 +38,6 @@ def display_discord_info(token_discord):
         r = requests.get('https://discord.com/api/v8/users/@me', headers=headers)
 
         status = "Valid" if r.status_code == 200 else "Invalid"
-
         username_discord = user.get('username', "None") + '#' + user.get('discriminator', "None")
         display_name_discord = user.get('global_name', "None")
         user_id_discord = user.get('id', "None")
@@ -108,44 +105,45 @@ def display_discord_info(token_discord):
             codes = [f"Gift: {gift_code['promotion']['outbound_title']}\nCode: {gift_code['code']}" for gift_code in gift_codes]
             gift_codes_discord = '\n\n'.join(codes) if codes else "None"
 
-        # Affichage des informations
-        info = f"""
-{colorize_title('Status')} {colorize_value(status)}
-{colorize_title('Token')} {colorize_value(token_discord)}
-{colorize_title('Username')} {colorize_value(username_discord)}
-{colorize_title('Display Name')} {colorize_value(display_name_discord)}
-{colorize_title('Id')} {colorize_value(user_id_discord)}
-{colorize_title('Created')} {colorize_value(created_at_discord)}
-{colorize_title('Country')} {colorize_value(country_discord)}
-{colorize_title('Email')} {colorize_value(email_discord)}
-{colorize_title('Verified')} {colorize_value(email_verified_discord)}
-{colorize_title('Phone')} {colorize_value(phone_discord)}
-{colorize_title('Nitro')} {colorize_value(nitro_discord)}
-{colorize_title('Avatar Decor')} {colorize_value(avatar_decoration_discord)}
-{colorize_title('Avatar URL')} {colorize_value(avatar_url_discord)}
-{colorize_title('Banner')} {colorize_value(banner_discord)}
-{colorize_title('Multi-Factor Authentication')} {colorize_value(mfa_discord)}
-{colorize_title('Authenticator Type')} {colorize_value(authenticator_types_discord)}
-{colorize_title('Billing')} {colorize_value(payment_methods_discord)}
-{colorize_title('Gift Code')} {colorize_value(gift_codes_discord)}
-{colorize_title('Guilds')} {colorize_value(guild_count)}
-        """
-
         console_width = os.get_terminal_size().columns
         gradient_colors = ((255, 105, 180), (0, 0, 255))
         gradient = generate_gradient_line(console_width, gradient_colors[0], gradient_colors[1])
-        colored_info = apply_gradient(info, gradient)
-        
+
+        info_lines = [
+            format_info("Status :", status, gradient),
+            format_info("Token :", token_discord, gradient),
+            format_info("Username :", username_discord, gradient),
+            format_info("Display Name :", display_name_discord, gradient),
+            format_info("Id :", user_id_discord, gradient),
+            format_info("Created :", created_at_discord, gradient),
+            format_info("Country :", country_discord, gradient),
+            format_info("Email :", email_discord, gradient),
+            format_info("Verified :", email_verified_discord, gradient),
+            format_info("Phone :", phone_discord, gradient),
+            format_info("Nitro :", nitro_discord, gradient),
+            format_info("Avatar Decor :", avatar_decoration_discord, gradient),
+            format_info("Avatar URL :", avatar_url_discord, gradient),
+            format_info("Banner :", banner_discord, gradient),
+            format_info("Multi-Factor Authentication :", mfa_discord, gradient),
+            format_info("Authenticator Type :", authenticator_types_discord, gradient),
+            format_info("Billing :", payment_methods_discord, gradient),
+            format_info("Gift Code :", gift_codes_discord, gradient),
+            format_info("Guilds :", guild_count, gradient),
+        ]
+
+        colored_info = "\n".join(info_lines)
         print(colored_info)
-        input(apply_gradient("Press Enter to return to the main menu...", generate_gradient_line(20, (255, 105, 180), (0, 0, 255))))
+        print()
+        input(apply_gradient("Press Enter to return to the main menu...", gradient))
 
     except Exception as e:
         print(f"{Fore.RED}Error when retrieving information: {e}")
 
 def main():
     clear_console()
-    token_prompt = apply_gradient("Enter Discord token:", generate_gradient_line(20, (255, 105, 180), (0, 0, 255)))
-    token_discord = input(token_prompt + Fore.GREEN + "Token: ")
+    gradient_colors = ((255, 105, 180), (0, 0, 255))
+    gradient = generate_gradient_line(20, gradient_colors[0], gradient_colors[1])
+    token_discord = input(apply_gradient("Enter Discord token:", gradient))
     clear_console()
     display_discord_info(token_discord)
 
