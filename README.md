@@ -4,12 +4,11 @@
 
 [![Version](https://img.shields.io/badge/version-1.0.8-blue)](https://github.com/HamzaGSopp/AnGel)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org)
-[![License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/issues)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/HamzaGSopp/AnGel/python.yml)](https://github.com/HamzaGSopp/AnGel/actions)
-[![Code Coverage](https://img.shields.io/codecov/c/github/HamzaGSopp/AnGel)](https://codecov.io/github/HamzaGSopp/AnGel)
+[![Contributors](https://img.shields.io/github/contributors/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/graphs/contributors)
+[![Last Commit](https://img.shields.io/github/last-commit/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/commits/main)
+
 
 AnGel is a free multi-tool offering numerous features in the field of cybersecurity and hacking.
 
