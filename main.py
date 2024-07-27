@@ -37,11 +37,9 @@ def check_for_update():
         response = requests.get(GITHUB_REPO + "/releases/latest")
         response.raise_for_status()
         
-        # Extraction de la version la plus récente
         data = response.json()
         latest_version = data.get("tag_name", "Version info not available")
         
-        # Affichage des informations sur les versions
         print(f"{Fore.CYAN}[ i ] Current version: {CURRENT_VERSION}")
         print(f"{Fore.CYAN}[ i ] Latest version: {latest_version}")
         
