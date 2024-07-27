@@ -79,9 +79,21 @@ def center_text(text, width):
     """Center the text based on the width of the console."""
     return text.center(width)
 
+<<<<<<< HEAD
 def bold_text(text):
     """Simulate bold text."""
     return f"{Fore.WHITE}{Style.BRIGHT}{text}{Style.RESET_ALL}"
+=======
+def enlarge_text(text, size=2):
+    """Enlarge text by duplicating each character."""
+    enlarged = []
+    for char in text:
+        if char == ' ':
+            enlarged.append(' ' * size)
+        else:
+            enlarged.append(char * size)
+    return ''.join(enlarged)
+>>>>>>> 6443b5349119f62a119b6ab80091b49b890c0d0d
 
 def display_menu():
     ascii_art = r"""
@@ -109,17 +121,25 @@ def display_menu():
         colored_line = apply_gradient(centered_line, gradient)
         print(colored_line)
     
+<<<<<<< HEAD
     # Texte "AnGel by HamzaGSopp" en gras
     print(bold_text(center_text("AnGel by HamzaGSopp", console_width)))
     # Ajouter des espaces entre le titre et le menu
     print("\n\n")
     
     # Créer le menu avec une disposition en colonnes croissantes
+=======
+    # Texte "AnGel by HamzaGSopp" en blanc
+    print(Fore.WHITE + center_text("AnGel by HamzaGSopp", console_width))
+    
+    # Créer le menu avec une bordure
+>>>>>>> 6443b5349119f62a119b6ab80091b49b890c0d0d
     menu_options = [
         "1. User Info", 
         "2. Guild Info", 
         "3. Webhook Spammer", 
         "4. soon", 
+<<<<<<< HEAD
         "5. soon",
         "6. soon", 
         "7. soon",
@@ -161,6 +181,40 @@ def display_menu():
     for line in menu_lines:
         print(Fore.WHITE + ' ' * padding + "│ " + line.strip().ljust(max_width) + " │")
     print(Fore.WHITE + ' ' * padding + border_bottom)
+=======
+        "5. soon", 
+        "6. Exit"
+    ]
+    
+    # Déterminer la largeur du menu et les colonnes
+    menu_width = 30  # Largeur de chaque colonne
+    column_count = 2
+    line_length = menu_width * column_count + column_count - 1  # Inclure les espaces entre les colonnes
+    
+    # Centrer la bordure du menu
+    border_line = '+' + '-' * line_length + '+'
+    print(Fore.WHITE + center_text(border_line, console_width))
+    
+    # Préparer les options pour les afficher en croissant
+    rows = (len(menu_options) + 1) // 2  # Calculer le nombre de lignes nécessaires
+    for row in range(rows):
+        left_index = row
+        right_index = row + rows
+        
+        left_option = menu_options[left_index] if left_index < len(menu_options) else ""
+        right_option = menu_options[right_index] if right_index < len(menu_options) else ""
+        
+        # Agrandir le texte des options
+        left_option = enlarge_text(left_option, size=2).ljust(menu_width)
+        right_option = enlarge_text(right_option, size=2).ljust(menu_width)
+        
+        # Centrer la ligne du menu
+        menu_line = f"|{left_option}|{right_option}|"
+        print(Fore.WHITE + center_text(menu_line, console_width))
+    
+    # Afficher la bordure inférieure du menu
+    print(Fore.WHITE + center_text(border_line, console_width))
+>>>>>>> 6443b5349119f62a119b6ab80091b49b890c0d0d
 
 def set_title(title):
     if os.name == 'nt':
@@ -175,6 +229,7 @@ def main():
     check_for_update()
     clear_console()
     display_menu()
+<<<<<<< HEAD
     
     # Créer un dégradé pour l'invite de saisie
     gradient_colors_input = ((255, 105, 180), (0, 0, 255))
@@ -193,6 +248,9 @@ def main():
                 print("Invalid choice. Please enter a number between 1 and 9.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
+=======
+    os.system("pause")
+>>>>>>> 6443b5349119f62a119b6ab80091b49b890c0d0d
 
 if __name__ == "__main__":
     main()

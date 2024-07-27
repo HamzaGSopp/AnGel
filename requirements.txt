@@ -1,3 +1,7 @@
 colorama
 requests
+<<<<<<< HEAD
 ctypes
+=======
+ctypes
+>>>>>>> 6443b5349119f62a119b6ab80091b49b890c0d0d
