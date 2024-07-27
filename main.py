@@ -6,15 +6,8 @@ import webbrowser
 from colorama import init, Fore, Style
 import time
 
-<<<<<<< HEAD
 init(autoreset=True)
 
-=======
-
-init(autoreset=True)
-
-
->>>>>>> 5ff4ed8c684e20361bfcb76a5be1e34824eac6b4
 GITHUB_REPO = "https://api.github.com/repos/HamzaGSopp/AnGel"
 GITHUB_URL = "https://github.com/HamzaGSopp/AnGel"
 CURRENT_VERSION = "1.0.0"  
