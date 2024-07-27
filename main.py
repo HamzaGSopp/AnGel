@@ -3,24 +3,19 @@ import sys
 import subprocess
 import requests
 import webbrowser
+from importlib import util
 from colorama import init, Fore, Style
 import time
 
-init(autoreset=True)
-
-GITHUB_REPO = "https://api.github.com/repos/HamzaGSopp/AnGel"
-GITHUB_URL = "https://github.com/HamzaGSopp/AnGel"
-CURRENT_VERSION = "1.0.0"  
-
 DEPENDENCIES = ["colorama", "requests"]
 
-def install_dependencies():
+def check_and_install_dependencies():
     for package in DEPENDENCIES:
-        try:
-            __import__(package)
-        except ImportError:
+        if util.find_spec(package) is None:
             print(f"{Fore.YELLOW}[ i ] Installing {package}...")
             subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+        else:
+            print(f"{Fore.GREEN}[ i ] {package} is already installed.")
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -36,7 +31,7 @@ def check_for_update():
     try:
         response = requests.get(GITHUB_REPO)
         response.raise_for_status()
-        latest_version = response.json()["tag_name"]
+        latest_version = response.json().get("tag_name", "unknown")
         
         if latest_version != CURRENT_VERSION:
             print(f"{Fore.GREEN}[ i ] New version available: {latest_version}")
@@ -66,7 +61,7 @@ def display_menu():
 
 def main():
     rename_console("AnGel Multitool")
-    install_dependencies()
+    check_and_install_dependencies()
     clear_console()
     check_for_update()
     time.sleep(2)  
