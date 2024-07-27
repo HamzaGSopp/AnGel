@@ -8,10 +8,10 @@
 [![GitHub forks](https://img.shields.io/github/forks/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/network/members)
 [![Contributors](https://img.shields.io/github/contributors/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/graphs/contributors)
 [![Last Commit](https://img.shields.io/github/last-commit/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/commits/main)
-[![Discord](https://img.shields.io/discord/123456789012345678?color=7289DA&label=Join%20our%20Discord&logo=discord)](https://discord.gg/gx2wTJyFCP)
+[![Discord](https://img.shields.io/discord/123456789012345678?color=7289DA&label=Join%20our%20Discord&logo=discord)]([https://discord.gg/gx2wTJyFCP](https://discord.com/invite/gx2wTJyFCP))
 
 AnGel is a free multi-tool offering numerous features in the field of cybersecurity and hacking.
-
+[Discord](https://discord.gg/gx2wTJyFCP)
 ## Features
 
 - **Developed in Python**: Written in Python 3.8+.
@@ -62,9 +62,6 @@ Contributions are welcome! To contribute:
     ```
 5. **Create a Pull Request**: Go to the "Pull Requests" tab and click "New Pull Request".
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
