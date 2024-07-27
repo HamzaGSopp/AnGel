@@ -106,7 +106,7 @@ def display_menu():
     print("\n\n")
     
     menu_options = [
-        "1. User Info", 
+        "1. Token Info", 
         "2. Guild Info", 
         "3. Webhook Spammer", 
         "4. soon", 
