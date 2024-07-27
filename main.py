@@ -3,19 +3,24 @@ import sys
 import subprocess
 import requests
 import webbrowser
-from importlib import util
 from colorama import init, Fore, Style
 import time
 
+init(autoreset=True)
+
+GITHUB_REPO = "https://api.github.com/repos/HamzaGSopp/AnGel"
+GITHUB_URL = "https://github.com/HamzaGSopp/AnGel"
+CURRENT_VERSION = "1.0.0"  
+
 DEPENDENCIES = ["colorama", "requests"]
 
-def check_and_install_dependencies():
+def install_dependencies():
     for package in DEPENDENCIES:
-        if util.find_spec(package) is None:
+        try:
+            __import__(package)
+        except ImportError:
             print(f"{Fore.YELLOW}[ i ] Installing {package}...")
             subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-        else:
-            print(f"{Fore.GREEN}[ i ] {package} is already installed.")
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -29,9 +34,16 @@ def rename_console(title):
 def check_for_update():
     print(f"{Fore.YELLOW}[ i ] Checking for updates...")
     try:
-        response = requests.get(GITHUB_REPO)
+        response = requests.get(GITHUB_REPO + "/releases/latest")
         response.raise_for_status()
-        latest_version = response.json().get("tag_name", "unknown")
+        
+        # Extraction de la version la plus récente
+        data = response.json()
+        latest_version = data.get("tag_name", "Version info not available")
+        
+        # Affichage des informations sur les versions
+        print(f"{Fore.CYAN}[ i ] Current version: {CURRENT_VERSION}")
+        print(f"{Fore.CYAN}[ i ] Latest version: {latest_version}")
         
         if latest_version != CURRENT_VERSION:
             print(f"{Fore.GREEN}[ i ] New version available: {latest_version}")
@@ -40,6 +52,7 @@ def check_for_update():
             print(f"{Fore.GREEN}[ i ] No new updates found.")
     except requests.RequestException as e:
         print(f"{Fore.RED}[ ! ] Failed to check for updates: {e}")
+
 
 def display_menu():
     ascii_art = r"""
@@ -61,12 +74,12 @@ def display_menu():
 
 def main():
     rename_console("AnGel Multitool")
-    check_and_install_dependencies()
+    install_dependencies()
     clear_console()
     check_for_update()
-    time.sleep(2)  
     clear_console()
     display_menu()
+
 
 if __name__ == "__main__":
     main()
