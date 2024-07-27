@@ -6,18 +6,16 @@ from colorama import Fore, Style
 
 colorama.init(autoreset=True)
 
-DISCORD_TOKEN = 'MTI1MjU1NDk3MDEzODY3NzMxMA.GYI-L-.cLsOGM8GX6z8r6DENwpndFmTjFNx3hDSG2haV4' 
+
+DISCORD_TOKEN = 'MTI1MjU1NDk3MDEzODY3NzMxMA.GFTBZA.-0qoQN2L394XLxxt9dWl8Muuti4uLAG0J7WjHw'
 
 def clear_console():
-    """Efface la console en fonction du système d'exploitation."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def rgb_to_colorama(rgb):
-    """Convertit les valeurs RGB en couleur Colorama."""
     return f"\x1b[38;2;{rgb[0]};{rgb[1]};{rgb[2]}m"
 
 def generate_gradient_line(width, start_rgb, end_rgb):
-    """Génère un dégradé linéaire de couleurs."""
     gradient = []
     for i in range(width):
         r = int(start_rgb[0] + (end_rgb[0] - start_rgb[0]) * (i / (width - 1)))
@@ -27,7 +25,6 @@ def generate_gradient_line(width, start_rgb, end_rgb):
     return gradient
 
 def apply_gradient(text, gradient):
-    """Applique le dégradé de couleurs au texte."""
     colored_text = []
     gradient_length = len(gradient)
     for i, char in enumerate(text):
@@ -35,7 +32,6 @@ def apply_gradient(text, gradient):
     return ''.join(colored_text) + Fore.RESET
 
 def get_user_info(user_id):
-    """Récupère les informations de l'utilisateur Discord en utilisant l'API Discord."""
     url = f'https://discord.com/api/v10/users/{user_id}'
     headers = {
         'Authorization': f'Bot {DISCORD_TOKEN}'
@@ -47,13 +43,12 @@ def get_user_info(user_id):
         return None
 
 def display_user_info(user_info):
-    """Affiche les informations de l'utilisateur avec des couleurs et des styles."""
     if user_info:
         user_name = f"{user_info['username']}#{user_info['discriminator']}"
         user_id = user_info['id']
         user_avatar = f"https://cdn.discordapp.com/avatars/{user_id}/{user_info['avatar']}.png"
         
-        gradient_colors = ((0, 0, 255), (128, 0, 128))  
+        gradient_colors = ((0, 0, 255), (148, 0, 211))  
         gradient = generate_gradient_line(os.get_terminal_size().columns, gradient_colors[0], gradient_colors[1])
         
         print(apply_gradient(f"Username: {user_name}", gradient))
@@ -63,10 +58,9 @@ def display_user_info(user_info):
         print(Fore.RED + "User not found or error fetching information.")
 
 def main():
-    """Fonction principale du programme."""
     clear_console()
     
-    gradient_colors_input = ((0, 0, 255), (128, 0, 128))  
+    gradient_colors_input = ((0, 0, 255), (148, 0, 211))  
     gradient_input = generate_gradient_line(30, gradient_colors_input[0], gradient_colors_input[1])
     
     gradient_text = apply_gradient("Enter Discord User ID: ", gradient_input)
@@ -77,7 +71,7 @@ def main():
     display_user_info(user_info)
     
     print("\n" + apply_gradient("Press Enter to return to the menu...", gradient_input))
-    input() 
+    input()  
 
 if __name__ == "__main__":
     main()
