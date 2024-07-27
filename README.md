@@ -1,8 +1,8 @@
+![AnGel Screenshot](https://github.com/HamzaGSopp/AnGel/blob/main/img/Capture.PNG)
 
 # AnGel
 
 AnGel is a free multi-tool offering numerous features in the field of cybersecurity and hacking.
-
 
 ## Features
 
@@ -44,5 +44,3 @@ Contributions are welcome! To contribute:
 3. Commit your changes (`git commit -am 'Add new feature'`)
 4. Push your branch (`git push origin my-new-feature`)
 5. Create a Pull Request
-
-
