@@ -8,7 +8,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/network/members)
 [![Contributors](https://img.shields.io/github/contributors/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/graphs/contributors)
 [![Last Commit](https://img.shields.io/github/last-commit/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/commits/main)
-
+[![Discord](https://img.shields.io/discord/123456789012345678?color=7289DA&label=Join%20our%20Discord&logo=discord)](https://discord.gg/gx2wTJyFCP)
 
 AnGel is a free multi-tool offering numerous features in the field of cybersecurity and hacking.
 
@@ -68,5 +68,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For any questions or issues, please open an issue on [GitHub](https://github.com/HamzaGSopp/AnGel/issues).
-
+For any questions or issues, please open an issue on [GitHub](https://github.com/HamzaGSopp/AnGel/issues) or join our community on [Discord](https://discord.gg/gx2wTJyFCP).
