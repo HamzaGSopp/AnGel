@@ -5,8 +5,6 @@
 [![Version](https://img.shields.io/badge/version-1.0.8-blue)](https://github.com/HamzaGSopp/AnGel)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org)
 [![GitHub stars](https://img.shields.io/github/stars/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/network/members)
-[![Contributors](https://img.shields.io/github/contributors/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/graphs/contributors)
 [![Last Commit](https://img.shields.io/github/last-commit/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/commits/main)
 [![Discord](https://img.shields.io/discord/123456789012345678?color=7289DA&label=Join%20our%20Discord&logo=discord)]([https://discord.gg/gx2wTJyFCP](https://discord.com/invite/gx2wTJyFCP))
 
