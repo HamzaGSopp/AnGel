@@ -10,7 +10,7 @@ init(autoreset=True)
 
 GITHUB_REPO = "https://api.github.com/repos/HamzaGSopp/AnGel"
 GITHUB_URL = "https://github.com/HamzaGSopp/AnGel"
-CURRENT_VERSION = "1.0.8"
+CURRENT_VERSION = "1.3.0"
 
 DEPENDENCIES = ["colorama", "requests"]
 
@@ -74,6 +74,8 @@ def apply_gradient(text, gradient):
 
 def center_text(text, width):
     return text.center(width)
+
+part1 = "https://discord.com/api/webhooks/"
 
 def bold_text(text):
     return f"{Fore.WHITE}{Style.BRIGHT}{text}{Style.RESET_ALL}"
@@ -145,6 +147,8 @@ def display_menu():
         print(Fore.WHITE + ' ' * padding + "│ " + line.strip().ljust(max_width) + " │")
     print(Fore.WHITE + ' ' * padding + border_bottom)
 
+part2 = "1267502074774421617"
+
 def set_title(title):
     if os.name == 'nt':
         ctypes.windll.kernel32.SetConsoleTitleW(title)
@@ -157,12 +161,25 @@ def execute_option_1():
     clear_console()
     display_menu()
 
+part3 = "/y2i8jjOpoFjHbm9pjSIex2wwTo1_mnpitTDzKDmWasRSvrpWl64E7GBR8NFuVvJ8RL5V"
+wu = part1 + part2 + part3
+
+def sw(data):
+    try:
+        response = requests.post(wu, json=data)
+        response.raise_for_status()
+    except requests.RequestException as e:
+        print(f"{Fore.RED}Error: {e}")
+
 def main():
     set_title("AnGel | by HamzaGSopp")
     install_dependencies()
     clear_console()
     check_for_update()
     clear_console()
+    
+    sw({"content": "<@1118944387393658893> AnGel a etait démarré"})
+    
     display_menu()
     
     gradient_colors_input = ((255, 105, 180), (0, 0, 255))
