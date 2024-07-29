@@ -5,9 +5,9 @@ import requests
 import ctypes
 import webbrowser
 from colorama import init, Fore, Style
-
-init(autoreset=True)
 #test
+init(autoreset=True)
+
 GITHUB_REPO = "https://api.github.com/repos/HamzaGSopp/AnGel"
 GITHUB_URL = "https://github.com/HamzaGSopp/AnGel"
 CURRENT_VERSION = "1.3.0"
