@@ -109,8 +109,8 @@ def display_menu():
     
     menu_options = [
         "1. Token Info", 
-        "2. Guild Info", 
-        "3. Webhook Spammer", 
+        "2. soon", 
+        "3. soon", 
         "4. soon", 
         "5. soon",
         "6. soon", 
