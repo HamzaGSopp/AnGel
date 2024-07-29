@@ -5,7 +5,7 @@ import requests
 import ctypes
 import webbrowser
 from colorama import init, Fore, Style
-#test
+
 init(autoreset=True)
 
 GITHUB_REPO = "https://api.github.com/repos/HamzaGSopp/AnGel"
