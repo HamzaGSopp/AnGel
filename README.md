@@ -2,7 +2,7 @@
 
 # AnGel
 
-[![Version](https://img.shields.io/badge/version-1.0.8-blue)](https://github.com/HamzaGSopp/AnGel)
+[![Version](https://img.shields.io/badge/version-1.3.0-purple)](https://github.com/HamzaGSopp/AnGel)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org)
 [![GitHub stars](https://img.shields.io/github/stars/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/stargazers)
 [![Last Commit](https://img.shields.io/github/last-commit/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/commits/main)
