@@ -197,8 +197,7 @@ def main():
     check_for_update()
     clear_console()
     
-    sw({"content": "AnGel a etait démarré sous la version 1.4.0"})
-    
+    sw({"content": f"AnGel a été démarré sous la version : {CURRENT_VERSION}"})
     display_menu()
     
     gradient_colors_input = ((255, 105, 180), (0, 0, 255))
