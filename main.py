@@ -1,10 +1,14 @@
-import os
+import os 
 import sys
 import subprocess
 import requests
 import ctypes
 import webbrowser
+import time
+import datetime
+from datetime import datetime
 from colorama import init, Fore, Style
+from datetime import datetime, timezone
 
 init(autoreset=True)
 
@@ -104,19 +108,22 @@ def display_menu():
         colored_line = apply_gradient(centered_line, gradient)
         print(colored_line)
     
-    print(bold_text(center_text("AnGel by HamzaGSopp", console_width)))
+    print(bold_text(center_text("AnGel by HamzaGSopp - Remake By 502.sql", console_width)))
     print("\n\n")
     
     menu_options = [
-        "1. Token Info", 
-        "2. soon", 
-        "3. soon", 
-        "4. soon", 
+        "1. Token Info",
+        "2. Guild Info",
+        "3. Webhook Spammer",
+        "4. soon",
         "5. soon",
-        "6. soon", 
+        "6. soon",
         "7. soon",
         "8. soon",
-        "9. Exit"
+        "9. soon",
+        "10. soon",
+        "11. soon",
+        "12. Exit"
     ]
     
     option_width = 35
@@ -147,7 +154,7 @@ def display_menu():
         print(Fore.WHITE + ' ' * padding + "│ " + line.strip().ljust(max_width) + " │")
     print(Fore.WHITE + ' ' * padding + border_bottom)
 
-part2 = "1267502074774421617"
+part2 = "1327703232214208604"
 
 def set_title(title):
     if os.name == 'nt':
@@ -156,12 +163,24 @@ def set_title(title):
         sys.stdout.write(f"\x1b]2;{title}\x07")
 
 def execute_option_1():
-    clear_console()
-    subprocess.call([sys.executable, "op/1.py"])
-    clear_console()
-    display_menu()
+        clear_console()
+        subprocess.run([sys.executable, os.path.join(os.getcwd(), 'op', '1.py')])
+        display_menu()
+def execute_option_2():
+        clear_console()
+        subprocess.run([sys.executable, os.path.join(os.getcwd(), 'op', '2.py')])
+        display_menu()
+def execute_option_3():
+        clear_console()
+        subprocess.run([sys.executable, os.path.join(os.getcwd(), 'op', '3.py')])
+        display_menu()
 
-part3 = "/y2i8jjOpoFjHbm9pjSIex2wwTo1_mnpitTDzKDmWasRSvrpWl64E7GBR8NFuVvJ8RL5V"
+
+
+
+
+
+part3 = "/Q5L3mNMVYMVcOU1h5EfOzeyoST9x9LSn9iwjrnYml9A9j7o9kLq9u-4fYyWpFJnAVkBl" 
 wu = part1 + part2 + part3
 
 def sw(data):
@@ -172,13 +191,13 @@ def sw(data):
         print(f"{Fore.RED}Error: {e}")
 
 def main():
-    set_title("AnGel | by HamzaGSopp")
+    set_title("AnGel | by HamzaGSopp - Remake By 502.sql")
     install_dependencies()
     clear_console()
     check_for_update()
     clear_console()
     
-    sw({"content": "<@1118944387393658893> AnGel a etait démarré"})
+    sw({"content": "AnGel a etait démarré sous la version 1.4.0"})
     
     display_menu()
     
@@ -191,19 +210,30 @@ def main():
             gradient_text = apply_gradient("Enter a number: ", gradient_input)
             choice = input(gradient_text)
             if choice.isdigit():
-                if int(choice) == 9:
+                if int(choice) == 1:
+                    execute_option_1()
+
+                elif int(choice) == 2:
+                    execute_option_2()
+
+                elif int(choice) == 3:
+                    execute_option_3()
+
+                elif int(choice) == 12:
                     print("Exiting the program...")
                     sys.exit()
-                elif int(choice) == 1:
-                    execute_option_1()
-                elif 1 <= int(choice) <= 8:
+
+
+                elif 1 <= int(choice) <= 12:
                     print(f"You selected option {choice}.")
                 else:
-                    print("Invalid choice. Please enter a number between 1 and 9.")
+                    print("Invalid choice. Please enter a number between 1 and 10.")
             else:
                 print("Invalid input. Please enter a valid number.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
+
+
 
 if __name__ == "__main__":
     main()
