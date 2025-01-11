@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org)
 [![GitHub stars](https://img.shields.io/github/stars/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/stargazers)
 [![Last Commit](https://img.shields.io/github/last-commit/HamzaGSopp/AnGel)](https://github.com/HamzaGSopp/AnGel/commits/main)
-[![Discord](https://img.shields.io/discord/123456789012345678?color=7289DA&label=Join%20our%20Discord&logo=discord)]([https://discord.gg/gx2wTJyFCP](https://discord.gg/vTU2ZkKc))
+[![Discord](https://img.shields.io/discord/123456789012345678?color=7289DA&label=Join%20our%20Discord&logo=discord)]([https://discord.gg/vTU2ZkKc](https://discord.gg/vTU2ZkKc))
 
 AnGel is a free multi-tool offering numerous features in the field of cybersecurity and hacking.
 [Discord](https://discord.gg/vTU2ZkKc)
