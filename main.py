@@ -14,7 +14,7 @@ init(autoreset=True)
 
 GITHUB_REPO = "https://api.github.com/repos/HamzaGSopp/AnGel"
 GITHUB_URL = "https://github.com/HamzaGSopp/AnGel"
-CURRENT_VERSION = "1.3.0"
+CURRENT_VERSION = "1.5.0"
 
 DEPENDENCIES = ["colorama", "requests"]
 
